@@ -33,9 +33,5 @@ RSpec.describe Walk do
       expect { app.coordiantes(['s']) }.to change { app.y_coordinate }.by(-1)
       expect { app.coordiantes(['w']) }.to change { app.y_coordinate }.by(-1)
     end
-    it 'adds -1 to the x, y coordinate for values of s or w' do
-      expect { app.coordiantes(['s']) }.to change { app.y_coordinate }.by(-1)
-      expect { app.coordiantes(['w']) }.to change { app.y_coordinate }.by(-1)
-    end
   end
 end
