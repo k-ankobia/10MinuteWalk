@@ -20,7 +20,6 @@ class Walk
   end
 
   def coordiantes(arr)
-    # arr.map{ |val| CORD[val] }
     arr.each do |x|
       if x == 'n' || x == 'e'
         @x_coordinate += 1
