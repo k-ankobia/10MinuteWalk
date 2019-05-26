@@ -19,14 +19,15 @@ RSpec.describe Walk do
       expect(app.y_coordinate).to eq 0
     end
 
-    it 'assigns coordinates of 1 for n e' do 
-      expect(app.coordiantes(['n'])).to eq [1]
-      expect(app.coordiantes(['e'])).to eq [1]
+    it 'adds 1 to the x, y coordinate for values of n or e' do 
+      expect { app.coordiantes(['n'])}.to change { app.x_coordinate}.by(1)
+      expect { app.coordiantes(['e'])}.to change { app.x_coordinate}.by(1)
     end
 
-    it 'assigns coordinates of -1 for s w' do 
-      expect(app.coordiantes(['s'])).to eq [-1]
-      expect(app.coordiantes(['w'])).to eq [-1]
+    it 'adds -1 to the x, y coordinate for values of s or w' do 
+      expect { app.coordiantes(['s'])}.to change { app.y_coordinate}.by(-1)
+      expect { app.coordiantes(['w'])}.to change { app.y_coordinate}.by(-1)
     end
+
   end
 end

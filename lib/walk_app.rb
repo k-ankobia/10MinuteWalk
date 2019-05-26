@@ -1,4 +1,6 @@
-class Walk 
+# frozen_string_literal: true
+
+class Walk
   attr_reader :x_coordinate, :y_coordinate
 
   CORD = {
@@ -6,8 +8,7 @@ class Walk
     's' => -1,
     'e' => 1,
     'w' => -1
-  }
-  
+  }.freeze
 
   def initialize(x_coordinate = 0, y_coordinate = 0)
     @x_coordinate = x_coordinate
@@ -19,9 +20,14 @@ class Walk
   end
 
   def coordiantes(arr)
-    new_arr = arr.map{
-      |val| CORD[val]
-    } 
-    new_arr
+    # arr.map{ |val| CORD[val] }
+    arr.each do |x|
+      if x == 'n' || x == 'e'
+        @x_coordinate += 1
+      elsif
+        x == 's' || x == 'w'
+        @y_coordinate -= 1
+      end
+    end
   end
 end
