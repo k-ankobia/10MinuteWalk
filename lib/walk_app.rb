@@ -18,7 +18,10 @@ class Walk
     false if direction.length != 10
   end
 
-  def coordiantes(val)
-  CORD[val]
+  def coordiantes(arr)
+    new_arr = arr.map{
+      |val| CORD[val]
+    } 
+    new_arr
   end
 end
