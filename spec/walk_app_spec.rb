@@ -15,7 +15,12 @@ RSpec.describe Walk do
       expect(app.ten_minute_walk(direction)).to eq false
     end
 
-    it 'returns true when a user takes arrives to starting position ' do
+    it 'returns true when a user arrives to starting position ' do
+      direction = ['w', 's', 'e', 'e', 'n', 'n', 'e', 's', 'w', 'w']
+      expect(app.ten_minute_walk(direction)).to eq true
+    end
+
+    it 'returns for when a user does not arrives to starting position @10mins ' do
       direction = ['w', 's', 'e', 'e', 'n', 'n', 'e', 's', 'w', 'w']
       expect(app.ten_minute_walk(direction)).to eq true
     end
