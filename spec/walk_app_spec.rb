@@ -23,5 +23,10 @@ RSpec.describe Walk do
       expect(app.coordiantes('n')).to eq 1
       expect(app.coordiantes('e')).to eq 1
     end
+
+    it 'assigns coordinates of -1 for s w' do 
+      expect(app.coordiantes('s')).to eq -1
+      expect(app.coordiantes('w')).to eq -1
+    end
   end
 end
