@@ -16,7 +16,13 @@ class Walk
   end
 
   def ten_minute_walk(direction)
-    false if direction.length != 10
+    if direction.length != 10 
+      false 
+    elsif @x_coordinate != 0 || @y_coordinate != 0 
+      false 
+    else 
+      true
+    end
   end
 
   def coordiantes(arr)

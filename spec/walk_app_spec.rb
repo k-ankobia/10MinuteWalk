@@ -14,6 +14,12 @@ RSpec.describe Walk do
       direction = %w[w s e e n n]
       expect(app.ten_minute_walk(direction)).to eq false
     end
+
+    it 'returns true when a user takes arrives to starting position ' do
+      direction = ['w', 's', 'e', 'e', 'n', 'n', 'e', 's', 'w', 'w']
+      expect(app.ten_minute_walk(direction)).to eq true
+    end
+
   end
 
   context '#coordinates' do
